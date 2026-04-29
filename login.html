@@ -1,30 +1,52 @@
-<!-- login.html -->
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info Space - Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info Space | Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hero">
-        <div class="card" style="max-width: 400px; margin: auto;">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Accesso Segreto</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Codice Agente" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password Crittografata" required>
-                </div>
-                <button type="submit" class="glow-btn" style="width: 100%; margin-top: 1rem;" 
-                    onclick="location.href='index.html'">
-                    Entra in Info Space
-                </button>
-            </form>
-        </div>
+  <div class="galaxy-bg"></div>
+  
+  <nav class="navbar">
+    <div class="logo">
+      <h1>INFO SPACE</h1>
     </div>
+    <div class="nav-links">
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+  
+  <div class="hero">
+    <div class="hero-content">
+      <h1>INFO SPACE</h1>
+      <p>Enter the realm of ultimate knowledge and mystery</p>
+      
+      <div class="card" style="max-width: 400px; margin: 0 auto;">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </div>
+          <button type="submit" class="glow-btn" style="width: 100%; margin-top: 1rem;">
+            Enter Info Space
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'index.html';
+    });
+  </script>
 </body>
 </html>
