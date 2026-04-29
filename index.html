@@ -1,37 +1,52 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Info Space</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info Space | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div class="navbar">
-  <div class="logo">INFO SPACE</div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="informations.html">Informations</a>
-    <a href="about.html">About</a>
-    <a href="contacts.html">Contacts</a>
-    <a href="download.html">Download</a>
+  <div class="galaxy-bg"></div>
+  
+  <nav class="navbar">
+    <div class="logo">
+      <h1>INFO SPACE</h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="informations.html">Informations</a>
+      <a href="about.html">About Us</a>
+      <a href="contacts.html">Contacts</a>
+      <a href="download.html">Download PDFs</a>
+      <a href="login.html">Logout</a>
+    </div>
+  </nav>
+  
+  <div class="hero">
+    <div class="hero-content">
+      <h1>UNCOVER THE MYSTERIES</h1>
+      <p>Explore the universe of knowledge and enigmatic phenomena</p>
+      <button class="glow-btn" onclick="location.href='informations.html'">
+        Explore Mysteries
+      </button>
+    </div>
   </div>
-</div>
-
-<section class="hero">
-  <h1>Explore the Unknown</h1>
-  <p>A premium knowledge portal of mysteries and hidden truths</p>
-  <a href="informations.html"><button class="btn">Start Exploring</button></a>
-</section>
-
-<div class="grid">
-  <div class="card">🛰️ Hidden Signals</div>
-  <div class="card">🌌 Cosmic Data</div>
-  <div class="card">🔍 Secret Files</div>
-</div>
-
-<footer>© Info Space</footer>
-
+  
+  <div class="card-container">
+    <div class="card">
+      <h3>Space Exploration</h3>
+      <p>Discover the latest breakthroughs in cosmic exploration and interstellar travel theories.</p>
+    </div>
+    <div class="card">
+      <h3>Ancient Civilizations</h3>
+      <p>Uncover lost civilizations and their advanced technologies that defy our understanding.</p>
+    </div>
+    <div class="card">
+      <h3>Quantum Mysteries</h3>
+      <p>Delve into the strange world of quantum physics and its philosophical implications.</p>
+    </div>
+  </div>
 </body>
 </html>
