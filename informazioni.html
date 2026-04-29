@@ -1,49 +1,37 @@
+<!-- index.html (Home) -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Informations | Info Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Space - Portale del Sapere Futuristico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">INFO SPACE</div>
+    <!-- Navbar (condivisa) -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>INFO SPACE</h1>
+        </div>
         <div class="nav-links">
+            <a href="login.html">Login</a>
             <a href="index.html">Home</a>
-            <a href="informations.html">Informations</a>
-            <a href="about.html">About Us</a>
-            <a href="contacts.html">Contacts</a>
-            <a href="download.html">Downloads</a>
+            <a href="informations.html">Informazioni</a>
+            <a href="about.html">Chi Siamo</a>
+            <a href="contacts.html">Contatti</a>
+            <a href="download.html">Download PDF</a>
         </div>
     </nav>
 
-    <div class="container">
-        <h2 style="text-align: center;">Active Mystery Archives</h2>
-        <div class="grid">
-            <div class="card glass-panel">
-                <h3>Bermuda Triangle</h3>
-                <p>Anomalous disappearances in the North Atlantic.</p>
-            </div>
-            <div class="card glass-panel">
-                <h3>Area 51</h3>
-                <p>Classified military secrets and extraterrestrial theories.</p>
-            </div>
-            <div class="card glass-panel">
-                <h3>Flight MH370</h3>
-                <p>The greatest aviation mystery of the 21st century.</p>
-            </div>
-            <div class="card glass-panel">
-                <h3>Mariana Trench</h3>
-                <p>Exploring the unknown depths of the Pacific.</p>
-            </div>
-            <div class="card glass-panel">
-                <h3>Dyatlov Pass</h3>
-                <p>The unsolved incident in the Ural Mountains.</p>
-            </div>
-            <div class="card glass-panel">
-                <h3>Tupac Case</h3>
-                <p>The investigation into a legendary icon's legacy.</p>
-            </div>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>SCOPRI I MISTERI DELL'UNIVERSO</h1>
+            <p>Esplora archivi di conoscenza segreta e fenomeni inesplicabili</p>
+            <button class="glow-btn" onclick="location.href='informations.html'">
+                Esplora Misteri
+            </button>
         </div>
     </div>
 </body>
