@@ -1,125 +1,139 @@
-/* === Variabili (Colori e Font) === */
 :root {
-    --colore-primario: #00f0ff;  /* Neon blu */
-    --colore-sfondo: #0a0a12;    /* Sfondo scuro */
-    --colore-testo: #e0e0e0;     /* Grigio chiaro per il testo */
-    --sfondo-carta: rgba(16, 16, 32, 0.7);  /* Carta semi-trasparente */
-    
-    --font-titoli: 'Orbitron', sans-serif;  /* Font futuristico per i titoli */
-    --font-corpo: 'Inter', sans-serif;      /* Font facile da leggere per il testo */
+    --bg-dark: #05050a;
+    --neon-blue: #00d2ff;
+    --neon-purple: #9d50bb;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #e0e0e0;
 }
 
-/* === Stili Base === */
-body {
-    font-family: var(--font-corpo);
-    color: var(--colore-testo);
-    background: var(--colore-sfondo);
-    line-height: 1.6;  /* Spaziatura tra le righe */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: var(--font-titoli);
-    margin-bottom: 1.5rem;
+body {
+    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-p {
-    margin-bottom: 1.2rem;
-    font-weight: 400;
+/* Background Animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+    z-index: -1;
 }
 
-/* === Barra di Navigazione === */
-.navbar {
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background: rgba(5, 5, 10, 0.8);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%;
-    background: rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
 }
 
-.logo h1 {
-    color: var(--colore-primario);
-    font-size: 1.8rem;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: var(--colore-testo);
     text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: 500;
-    transition: color 0.3s;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+    opacity: 0.7;
 }
 
 .nav-links a:hover {
-    color: var(--colore-primario);  /* Cambia colore al passaggio del mouse */
+    opacity: 1;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
 }
 
-/* === Sezione Hero (Testata Principale) === */
-.hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: url('space-bg.jpg') center/cover;
-    padding: 0 5%;
+/* Glass Card Style */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-}
-
-/* === Pulsante Luminoso === */
-.glow-btn {
-    padding: 0.8rem 2rem;
-    font-family: var(--font-titoli);
-    font-size: 1rem;
-    background: var(--colore-primario);
-    color: #0a0a12;  /* Testo scuro sul pulsante */
+/* Glowing Buttons */
+.btn-glow {
+    padding: 12px 30px;
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    color: white;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: 0.4s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
-.glow-btn:hover {
-    box-shadow: 0 0 20px var(--colore-primario);  /* Effetto luminoso */
-    transform: scale(1.05);  /* Allarga leggermente al passaggio del mouse */
+.btn-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
 }
 
-/* === Contenitore delle Carte === */
-.card-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 4rem 5%;
-    flex-wrap: wrap;  /* Adatta al mobile */
+/* Grid Layout for Cards */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: var(--sfondo-carta);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    width: 30%;
-    min-width: 300px;  /* Larghezza minima per il mobile */
-    margin-bottom: 2rem;
-    transition: transform 0.3s;
+    transition: 0.3s ease;
+    text-align: center;
 }
 
 .card:hover {
-    transform: translateY(-10px);  /* Solleva leggermente al passaggio del mouse */
+    transform: translateY(-10px);
+    border-color: var(--neon-blue);
 }
 
-.card h3 {
-    color: var(--colore-primario);
-    margin-top: 0;
+h1, h2 {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+p {
+    line-height: 1.6;
+    opacity: 0.8;
 }
