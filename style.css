@@ -6,6 +6,7 @@
   --glow-intensity: 0;
 }
 
+/* Animate Background & Effects */
 @keyframes pulse {
   0% { box-shadow: 0 0 5px var(--neon-blue); }
   50% { box-shadow: 0 0 20px var(--neon-purple), 0 0 30px var(--neon-blue); }
@@ -25,7 +26,8 @@
 
 body {
   margin: 0;
-  font-family: 'Orbitron', sans-serif;
+  /* تم تغيير الخط ليكون عادياً واحترافياً */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background: var(--dark-bg);
   background-image: 
     radial-gradient(circle at top right, rgba(31, 14, 70, 0.2), transparent),
@@ -49,7 +51,7 @@ body {
   z-index: -1;
 }
 
-/* Navigation Bar */
+/* Navigation Bar - (Traduzione: Barra di Navigazione) */
 .navbar {
   position: sticky;
   top: 0;
@@ -71,24 +73,13 @@ body {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   transition: all 0.3s ease;
   position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -96,11 +87,7 @@ body {
   transform: translateY(-3px);
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* Cards */
+/* Cards - (Traduzione: Schede) */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -130,9 +117,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: 0;
+  font-weight: 700;
 }
 
-/* Buttons */
+/* Buttons - (Traduzione: Pulsanti) */
 .glow-btn {
   background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
   color: white;
@@ -141,34 +129,18 @@ body {
   border-radius: 50px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.glow-btn::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  z-index: -1;
-  filter: blur(20px);
-  opacity: var(--glow-intensity);
-  transition: opacity 0.3s ease;
+  font-family: inherit;
 }
 
 .glow-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 240, 255, 0.5);
-  --glow-intensity: 1;
 }
 
-/* Form Elements */
+/* Form Elements - (Traduzione: Elementi del Modulo) */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -177,8 +149,8 @@ body {
   display: block;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .form-group input, .form-group textarea {
@@ -189,16 +161,9 @@ body {
   border-radius: 10px;
   color: white;
   font-family: inherit;
-  transition: all 0.3s ease;
 }
 
-.form-group input:focus, .form-group textarea:focus {
-  outline: none;
-  border-color: var(--neon-blue);
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-}
-
-/* Hero Section */
+/* Hero Section - (Traduzione: Sezione Principale) */
 .hero {
   height: 90vh;
   display: flex;
@@ -207,36 +172,17 @@ body {
   text-align: center;
 }
 
-.hero-content {
-  max-width: 800px;
-  padding: 2rem;
-}
-
 .hero h1 {
-  font-size: 4rem;
-  margin-bottom: 0;
+  font-size: 3.5rem;
+  font-weight: 800;
   background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .nav-links {
-    gap: 1rem;
-  }
-  
   .hero h1 {
     font-size: 2.5rem;
-  }
-  
-  .card-container {
-    grid-template-columns: 1fr;
   }
 }
