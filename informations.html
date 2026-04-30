@@ -1,48 +1,127 @@
-<!-- 4. خندق ماريانا -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misteri Irrisolti</title>
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #00bfff;
+            text-shadow: 0 0 10px #00bfff;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background: #16213e;
+            border: 1px solid #0f3460;
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00bfff;
+        }
+        h3 {
+            color: #e94560;
+            margin-top: 0;
+        }
+        p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        strong {
+            color: #f0a500;
+        }
+        
+        /* تنسيق الفيديو ليظهر بشكل صحيح */
+        .video-wrapper {
+            margin-top: 15px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid #333;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .glow-btn {
+            margin-top: auto; /* يدفع الزر للأسفل */
+            padding: 10px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .glow-btn:hover {
+            background: #ff5777;
+            box-shadow: 0 0 15px #e94560;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>6 Casi Misteriosi e Famosi</h1>
+
+    <div class="container">
+        <!-- 1. Bermuda Triangle -->
         <div class="card">
-            <h3>🌊 La Fossa delle Marianne</h3>
-            <p>La Fossa delle Marianne è il punto più profondo della crosta terrestre, raggiungendo gli 11.000 metri nel Challenger Deep.</p>
-            <p><strong>Pressione Estrema:</strong> Qui la pressione è di circa 1.086 bar, equivalente a avere un elefante in piedi su un pollice.</p>
-            <p><strong>Creature Aliene:</strong> In questo buio perenne vivono specie che sfidano la biologia, come pesci trasparenti e anfipodi giganti. Solo tre persone sono scese nell'abisso (meno di quante siano state sulla Luna), lasciando il 95% di questo ecosistema totalmente inesplorato.</p>
-            <div class="video-container">
+            <h3>🌊 Il Triangolo delle Bermude</h3>
+            <p>Una regione collegata a misteriose sparizioni di navi e aerei. Non esiste una spiegazione unica provata.</p>
+            <!-- تم تصحيح المسار هنا -->
+            <div class="video-wrapper">
                 <video controls>
-                    <source src="4.mp4" type="video/mp4">
+                    <source src="information/1.mp4" type="video/mp4">
                     Il tuo browser non supporta il tag video.
                 </video>
             </div>
             <button class="glow-btn">Deep Investigation</button>
         </div>
 
-        <!-- 5. حادثة ممر دياتلوف -->
+        <!-- 2. Area 51 -->
         <div class="card">
-            <h3>🏔 L'Incidente del Passo Djatlov: Terrore sugli Urali</h3>
-            <p>Nel 1959, nove escursionisti morirono in circostanze che ancora oggi tolgono il sonno agli investigatori.</p>
-            <p><strong>Scena del Crimine:</strong> La loro tenda fu trovata squarciata dall'interno; i corpi furono rinvenuti a centinaia di metri di distanza, alcuni seminudi nonostante i -30°C.</p>
-            <p><strong>Ferite Inspiegabili:</strong> Alcune vittime presentavano traumi interni pari a quelli di un incidente d'auto ad alta velocità, ma senza alcun segno esterno. Radioattività sui vestiti e avvistamenti di "sfere arancioni" nel cielo rendono il caso un mix inquietante di scienza e paranormale.</p>
-            <div class="video-container">
+            <h3>🛸 Area 51</h3>
+            <p>Una base militare segreta statunitense legata a teorie del complotto su UFO e alieni.</p>
+            <div class="video-wrapper">
                 <video controls>
-                    <source src="5.mp4" type="video/mp4">
+                    <source src="information/2.mp4" type="video/mp4">
                     Il tuo browser non supporta il tag video.
                 </video>
             </div>
             <button class="glow-btn">Deep Investigation</button>
         </div>
 
-        <!-- 6. توباك شاكور -->
+        <!-- 3. Malaysia Airlines 370 -->
         <div class="card">
-            <h3>🔫 Tupac Shakur: La Leggenda Senza Giustizia</h3>
-            <p>Il 7 settembre 1996, il mondo del Rap perse la sua figura più iconica in una sparatoria a Las Vegas.</p>
-            <p><strong>L'Omertà:</strong> Nonostante la sparatoria sia avvenuta in una zona affollata, nessuno è stato condannato per l'omicidio per decenni. Solo recentemente (2023) ci sono stati sviluppi legali significativi.</p>
-            <p><strong>Teorie del Complotto:</strong> La mancanza di un colpevole ha alimentato miti secondo cui Tupac sarebbe ancora vivo in esilio a Cuba o che l'FBI fosse coinvolta per fermare l'influenza politica dell'artista.</p>
-            <div class="video-container">
+            <h3>✈️ Volo Malaysia Airlines 370</h3>
+            <p>Un aereo passeggeri scomparso nel 2014. Il relitto principale rimane disperso.</p>
+            <div class="video-wrapper">
                 <video controls>
-                    <source src="6.mp4" type="video/mp4">
+                    <source src="information/3.mp4" type="video/mp4">
                     Il tuo browser non supporta il tag video.
                 </video>
             </div>
             <button class="glow-btn">Deep Investigation</button>
         </div>
-    </div>
-
-</body>
-</html>
