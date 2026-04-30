@@ -1,54 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Info Space | Download PDFs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Archive - Download PDF</title>
+    <style>
+        /* خلفية الموقع */
+        body {
+            background-color: #0a0a1a; /* خلفية داكنة جداً */
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* حاوية الأرشيف الرئيسية */
+        .archive-container {
+            background: rgba(20, 20, 40, 0.85); /* خلفية شبه شفافة */
+            border: 1px solid rgba(0, 200, 255, 0.3); /* حدود مضيئة */
+            border-radius: 20px;
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* العنوان الرئيسي */
+        .archive-title {
+            text-align: center;
+            color: #00e5ff; /* لون سيان ساطع */
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00e5ff;
+        }
+
+        /* قائمة الملفات */
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.2s;
+        }
+
+        .file-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .file-item:last-child {
+            border-bottom: none;
+        }
+
+        /* اسم الملف */
+        .file-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #f0f0f0;
+            line-height: 1.4;
+        }
+
+        /* زر التحميل (مطابق للصورة) */
+        .download-btn {
+            background: linear-gradient(90deg, #00c6ff, #a855f7); /* تدرج أزرق إلى بنفسجي */
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px; /* زوايا دائرية */
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
+            text-decoration: none; /* لإزالة الخط السفلي للرابط */
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+        }
+
+        /* أيقونة صغيرة قبل الاسم (اختياري) */
+        .file-item::before {
+            content: "📄";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="galaxy-bg"></div>
-  
-  <nav class="navbar">
-    <div class="logo">
-      <h1>INFO SPACE</h1>
+
+    <div class="archive-container">
+        <h2 class="archive-title">Research Archive</h2>
+        
+        <ul class="file-list">
+            <!-- الملف الأول: مثلث برمودا -->
+            <li class="file-item">
+                <span class="file-name">Bermuda Triangle - Comprehensive Analysis</span>
+                <!-- رابط التحميل: انتبه لاسم المجلد downlod (بدون a) -->
+                <a href="downlod/1.pdf" download="Bermuda_Triangle_Report.pdf" class="download-btn">Download</a>
+            </li>
+
+            <!-- الملف الثاني: فيزياء الكم -->
+            <li class="file-item">
+                <span class="file-name">Quantum Physics - Mysteries Explained</span>
+                <a href="downlod/2.pdf" download="Quantum_Physics_Guide.pdf" class="download-btn">Download</a>
+            </li>
+            <!-- الملف الثالث: حضارات قديمة -->
+            <li class="file-item">
+                <span class="file-name">Ancient Civilizations - Lost Technologies</span>
+                <a href="downlod/3.pdf" download="Ancient_Tech_Report.pdf" class="download-btn">Download</a>
+            </li>
+            
+            <!-- يمكنك إضافة المزيد هنا بنفس الطريقة -->
+        </ul>
     </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="informations.html">Informations</a>
-      <a href="about.html">About Us</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="download.html">Download PDFs</a>
-      <a href="login.html">Logout</a>
-    </div>
-  </nav>
-  
-  <div class="hero">
-    <div class="hero-content">
-      <h1>DOCUMENT LIBRARY</h1>
-      <p>Access premium research papers and exclusive investigations</p>
-    </div>
-  </div>
-  
-  <div class="card-container">
-    <div class="card" style="max-width: 500px; margin: 2rem auto;">
-      <h3>Research Archive</h3>
-      <ul style="list-style: none; padding: 0;">
-        <li style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-          <span style="display: inline-block; width: 70%;">Bermuda Triangle - Comprehensive Analysis</span>
-          <button class="glow-btn" style="padding: 0.5rem 1rem; float: right;">Download</button>
-        </li>
-        <li style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-          <span style="display: inline-block; width: 70%;">Quantum Physics - Mysteries Explained</span>
-          <button class="glow-btn" style="padding: 0.5rem 1rem; float: right;">Download</button>
-        </li>
-        <li style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-          <span style="display: inline-block; width: 70%;">Ancient Civilizations - Lost Technologies</span>
-          <button class="glow-btn" style="padding: 0.5rem 1rem; float: right;">Download</button>
-        </li>
-      </ul>
-    </div>
-  </div>
+
 </body>
 </html>
