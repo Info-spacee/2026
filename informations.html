@@ -1,281 +1,48 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Info Space | Archivio dei Misteri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --neon-blue: #00d2ff;
-      --neon-purple: #9d50bb;
-      --dark-bg: #0a0a12;
-      --glass-bg: rgba(16, 16, 32, 0.6);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --font-heading: 'Orbitron', sans-serif;
-      --font-body: 'Inter', sans-serif;
-    }
-    
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      background: var(--dark-bg);
-      color: white;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
-    
-    /* Galaxy Background */
-    .galaxy-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(ellipse at top right, rgba(31, 14, 70, 0.3), transparent),
-        radial-gradient(ellipse at bottom left, rgba(15, 30, 60, 0.4), transparent);
-      background-size: 200% 200%;
-      animation: galaxy-move 40s ease infinite;
-      z-index: -1;
-    }
-    
-    @keyframes galaxy-move {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
-    
-    /* Navbar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      background: rgba(10, 10, 18, 0.85);
-      backdrop-filter: blur(10px);
-      padding: 1rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    }
-    
-    .logo h1 {
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-    
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      transition: all 0.4s;
-      position: relative;
-    }
-    
-    .nav-links a:hover {
-      background: rgba(157, 80, 187, 0.2);
-      transform: translateY(-3px);
-    }
-    
-    /* Hero Section */
-    .hero {
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 5%;
-    }
-    
-    .hero-content h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2rem, 5vw, 4rem);
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
-      margin-bottom: 1rem;
-    }
-    
-    .hero-content p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    /* Card Container */
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem 5%;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    
-    .card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(15px);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: all 0.5s ease;
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 15px 40px rgba(0, 210, 255, 0.3);
-    }
-    
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-    }
-    
-    .card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: var(--neon-blue);
-    }
-    
-    .card p {
-      flex-grow: 1;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    
-    /* Glow Button */
-    .glow-btn {
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      color: black;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      align-self: flex-start;
-      margin-top: auto;
-    }
-    
-    .glow-btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.5);
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        gap: 1rem;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .card-container {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="galaxy-bg"></div>
-  
-  <nav class="navbar">
-    <div class="logo">
-      <h1>INFO SPACE</h1>
+<!-- 4. خندق ماريانا -->
+        <div class="card">
+            <h3>🌊 La Fossa delle Marianne</h3>
+            <p>La Fossa delle Marianne è il punto più profondo della crosta terrestre, raggiungendo gli 11.000 metri nel Challenger Deep.</p>
+            <p><strong>Pressione Estrema:</strong> Qui la pressione è di circa 1.086 bar, equivalente a avere un elefante in piedi su un pollice.</p>
+            <p><strong>Creature Aliene:</strong> In questo buio perenne vivono specie che sfidano la biologia, come pesci trasparenti e anfipodi giganti. Solo tre persone sono scese nell'abisso (meno di quante siano state sulla Luna), lasciando il 95% di questo ecosistema totalmente inesplorato.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="4.mp4" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                </video>
+            </div>
+            <button class="glow-btn">Deep Investigation</button>
+        </div>
+
+        <!-- 5. حادثة ممر دياتلوف -->
+        <div class="card">
+            <h3>🏔 L'Incidente del Passo Djatlov: Terrore sugli Urali</h3>
+            <p>Nel 1959, nove escursionisti morirono in circostanze che ancora oggi tolgono il sonno agli investigatori.</p>
+            <p><strong>Scena del Crimine:</strong> La loro tenda fu trovata squarciata dall'interno; i corpi furono rinvenuti a centinaia di metri di distanza, alcuni seminudi nonostante i -30°C.</p>
+            <p><strong>Ferite Inspiegabili:</strong> Alcune vittime presentavano traumi interni pari a quelli di un incidente d'auto ad alta velocità, ma senza alcun segno esterno. Radioattività sui vestiti e avvistamenti di "sfere arancioni" nel cielo rendono il caso un mix inquietante di scienza e paranormale.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="5.mp4" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                </video>
+            </div>
+            <button class="glow-btn">Deep Investigation</button>
+        </div>
+
+        <!-- 6. توباك شاكور -->
+        <div class="card">
+            <h3>🔫 Tupac Shakur: La Leggenda Senza Giustizia</h3>
+            <p>Il 7 settembre 1996, il mondo del Rap perse la sua figura più iconica in una sparatoria a Las Vegas.</p>
+            <p><strong>L'Omertà:</strong> Nonostante la sparatoria sia avvenuta in una zona affollata, nessuno è stato condannato per l'omicidio per decenni. Solo recentemente (2023) ci sono stati sviluppi legali significativi.</p>
+            <p><strong>Teorie del Complotto:</strong> La mancanza di un colpevole ha alimentato miti secondo cui Tupac sarebbe ancora vivo in esilio a Cuba o che l'FBI fosse coinvolta per fermare l'influenza politica dell'artista.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="6.mp4" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                </video>
+            </div>
+            <button class="glow-btn">Deep Investigation</button>
+        </div>
     </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="informations.html">Informations</a>
-      <a href="about.html">About Us</a>
-      <a href="contacts.html">Contacts</a>
-      <a href="download.html">Download PDFs</a>
-      <a href="login.html">Logout</a>
-    </div>
-  </nav>
-  
-  <div class="hero">
-    <div class="hero-content">
-      <h1>MYSTERY ARCHIVE</h1>
-      <p>Investigate the world's most intriguing enigmas and unexplained phenomena</p>
-    </div>
-  </div>
-  
-  <div class="card-container">
-    <div class="card">
-      <h3>🌊 Il Triangolo delle Bermuda: Il Limbo dell'Atlantico</h3>
-      <p>Il Triangolo delle Bermuda non è solo una leggenda, ma una vasta area di circa 1,1 milioni di chilometri quadrati che ha inghiottito centinaia di vite.</p>
-      <p><strong>Il Caso del Volo 19:</strong> Nel 1945, cinque bombardieri della Marina USA sparirono durante un'esercitazione; l'idrovolante inviato per cercarli sparì a sua volta nel nulla.</p>
-      <p><strong>Spiegazioni Scientifiche:</strong> Molti esperti attribuiscono le sparizioni a improvvise emissioni di gas metano dal fondale, che ridurrebbero la densità dell'acqua facendo affondare le navi istantaneamente, o a potenti "onde anomale" alte oltre 30 metri.</p>
-      <button class="glow-btn">Deep Investigation</button>
-    </div>
-    
-    <div class="card">
-      <h3>🛸 Area 51: Segreti dal Cosmo</h3>
-      <p>Situata nel remoto deserto del Nevada, l'esistenza di questa base è stata ammessa ufficialmente solo nel 2013.</p>
-      <p><strong>Tecnologia Aliena:</strong> Si ipotizza che all'interno del settore S-4 vengano studiati i resti dell'incidente di Roswell del 1947 per replicare la propulsione gravitazionale dei dischi volanti.</p>
-      <p><strong>Massima Sicurezza:</strong> La zona è sorvegliata da sensori di movimento interrati e pattuglie armate conosciute come "Cammo Dudes". È vietato persino sorvolare l'area, rendendola il luogo più protetto del pianeta.</p>
-      <button class="glow-btn">Deep Investigation</button>
-    </div>
-    
-    <div class="card">
-      <h3>✈️ Il Volo MH370: Svanito nel Vuoto</h3>
-      <p>L'8 marzo 2014, il Boeing 777 della Malaysia Airlines è diventato il più grande enigma dell'aviazione moderna.</p>
-      <p><strong>L'Ultimo Segnale:</strong> Pochi minuti dopo il decollo, il transponder è stato spento manualmente e l'aereo ha effettuato una virata brusca verso l'Oceano Indiano.</p>
-      <p><strong>Il Mistero del Relitto:</strong> Nonostante una ricerca costata oltre 150 milioni di dollari, il corpo principale dell'aereo non è mai stato trovato. Le teorie spaziano dal suicidio del pilota a un dirottamento remoto, ma la verità riposa ancora a 6.000 metri di profondità.</p>
-      <button class="glow-btn">Deep Investigation</button>
-    </div>
-    
-    <div class="card">
-      <h3>🌊 La Fossa delle Marianne: L'Abisso Ignoto</h3>
-      <p>La Fossa delle Marianne è il punto più profondo della crosta terrestre, raggiungendo gli 11.000 metri nel Challenger Deep.</p>
-      <p><strong>Pressione Estrema:</strong> Qui la pressione è di circa 1.086 bar, equivalente a avere un elefante in piedi su un pollice.</p>
-      <p><strong>Creature Aliene:</strong> In questo buio perenne vivono specie che sfidano la biologia, come pesci trasparenti e anfipodi giganti. Solo tre persone sono scese nell'abisso (meno di quante siano state sulla Luna), lasciando il 95% di questo ecosistema totalmente inesplorato.</p>
-      <button class="glow-btn">Deep Investigation</button>
-    </div>
-    
-    <div class="card">
-      <h3>🏔️ L'Incidente del Passo Djatlov: Terrore sugli Urali</h3>
-      <p>Nel 1959, nove escursionisti morirono in circostanze che ancora oggi tolgono il sonno agli investigatori.</p>
-      <p><strong>Scena del Crimine:</strong> La loro tenda fu trovata squarciata dall'interno; i corpi furono rinvenuti a centinaia di metri di distanza, alcuni seminudi nonostante i -30°C.</p>
-      <p><strong>Ferite Inspiegabili:</strong> Alcune vittime presentavano traumi interni pari a quelli di un incidente d'auto ad alta velocità, ma senza alcun segno esterno. Radioattività sui vestiti e avvistamenti di "sfere arancioni" nel cielo rendono il caso un mix inquietante di scienza e paranormale.</p>
-      <button class="glow-btn">Deep Investigation</button>
-    </div>
-    
-    <div class="card">
-      <h3>🔫 Tupac Shakur: La Leggenda Senza Giustizia</h3>
-      <p>Il 7 settembre 1996, il mondo del Rap perse la sua figura più iconica in una sparatoria a Las Vegas.</p>
-      <p><strong>L'Omertà:</strong> Nonostante la sparatoria sia avvenuta in una zona affollata, nessuno è stato condannato per l'omicidio per decenni. Solo recentemente (2023) ci sono stati sviluppi legali significativi.</p>
-      <p><strong>Teorie del Complotto:</strong> La mancanza di un colpevole ha alimentato miti secondo cui Tupac sarebbe ancora vivo in esilio a Cuba o che l'FBI fosse coinvolta per fermare l'influenza politica dell'artista.</p>
-      <button class="glow-btn">Deep Investigation</button>
-    </div>
-  </div>
+
 </body>
 </html>
