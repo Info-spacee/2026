@@ -3,125 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misteri Irrisolti</title>
+    <title>6 Misteri Irrisolti - Download Video</title>
     <style>
         body {
-            background-color: #1a1a2e;
+            background-color: #0f0f1b;
             color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             padding: 20px;
+            margin: 0;
         }
+
         h1 {
             text-align: center;
-            color: #00bfff;
-            text-shadow: 0 0 10px #00bfff;
+            color: #00ccff;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+            margin-bottom: 40px;
         }
+
+        /* تنسيق الشبكة (Grid) لعرض البطاقات */
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
         .card {
-            background: #16213e;
-            border: 1px solid #0f3460;
+            background: #1a1a2e;
+            border: 1px solid #333;
             border-radius: 15px;
             padding: 20px;
-            width: 300px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease;
         }
+
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #00bfff;
+            transform: translateY(-10px);
+            border-color: #00ccff;
         }
+
         h3 {
-            color: #e94560;
+            color: #ff4757;
             margin-top: 0;
+            border-bottom: 2px solid #ff4757;
+            padding-bottom: 5px;
         }
+
         p {
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #ccc;
         }
+
         strong {
-            color: #f0a500;
+            color: #ffa502;
         }
-        
-        /* تنسيق الفيديو ليظهر بشكل صحيح */
+
+        /* تنسيق الفيديو */
         .video-wrapper {
-            margin-top: 15px;
+            margin: 15px 0;
             width: 100%;
+            background-color: #000;
             border-radius: 8px;
             overflow: hidden;
-            background: #000;
-            border: 1px solid #333;
+            border: 1px solid #444;
         }
+
         video {
             width: 100%;
             height: auto;
             display: block;
         }
-        
+
+        /* تنسيق الأزرار */
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
         .glow-btn {
-            margin-top: auto; /* يدفع الزر للأسفل */
+            flex: 1;
             padding: 10px;
-            background: #e94560;
+            background-color: #ff4757;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            text-transform: uppercase;
             transition: 0.3s;
         }
+
         .glow-btn:hover {
-            background: #ff5777;
-            box-shadow: 0 0 15px #e94560;
+            background-color: #ff6b81;
+            box-shadow: 0 0 15px #ff4757;
+        }
+
+        /* زر التحميل المميز */
+        .download-btn {
+            flex: 1;
+            padding: 10px;
+            background-color: #2ed573; /* لون أخضر للتحميل */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background-color: #7bed9f;
         }
     </style>
 </head>
 <body>
 
-    <h1>6 Casi Misteriosi e Famosi</h1>
+    <h1>🧩 6 Famous Unsolved / Mysterious Cases</h1>
 
     <div class="container">
+        
         <!-- 1. Bermuda Triangle -->
         <div class="card">
             <h3>🌊 Il Triangolo delle Bermude</h3>
             <p>Una regione collegata a misteriose sparizioni di navi e aerei. Non esiste una spiegazione unica provata.</p>
-            <!-- تم تصحيح المسار هنا -->
+            
             <div class="video-wrapper">
                 <video controls>
                     <source src="information/1.mp4" type="video/mp4">
-                    Il tuo browser non supporta il tag video.
+                    Il tuo browser non supporta i video HTML5.
                 </video>
             </div>
-            <button class="glow-btn">Deep Investigation</button>
-        </div>
 
+            <div class="btn-container">
+                <button class="glow-btn">Deep Investigation</button>
+                <!-- زر التحميل: يربط مباشرة بملف الفيديو -->
+                <a href="information/1.mp4" download="Bermuda_Triangle_Mystery.mp4" class="download-btn">Scarica Video</a>
+            </div>
+        </div>
         <!-- 2. Area 51 -->
         <div class="card">
             <h3>🛸 Area 51</h3>
             <p>Una base militare segreta statunitense legata a teorie del complotto su UFO e alieni.</p>
+            
             <div class="video-wrapper">
                 <video controls>
                     <source src="information/2.mp4" type="video/mp4">
-                    Il tuo browser non supporta il tag video.
+                    Il tuo browser non supporta i video HTML5.
                 </video>
             </div>
-            <button class="glow-btn">Deep Investigation</button>
+
+            <div class="btn-container">
+                <button class="glow-btn">Deep Investigation</button>
+                <a href="information/2.mp4" download="Area_51_Mystery.mp4" class="download-btn">Scarica Video</a>
+            </div>
         </div>
 
         <!-- 3. Malaysia Airlines 370 -->
         <div class="card">
             <h3>✈️ Volo Malaysia Airlines 370</h3>
             <p>Un aereo passeggeri scomparso nel 2014. Il relitto principale rimane disperso.</p>
+            
             <div class="video-wrapper">
                 <video controls>
                     <source src="information/3.mp4" type="video/mp4">
-                    Il tuo browser non supporta il tag video.
+                    Il tuo browser non supporta i video HTML5.
                 </video>
             </div>
-            <button class="glow-btn">Deep Investigation</button>
+
+            <div class="btn-container">
+                <button class="glow-btn">Deep Investigation</button>
+                <a href="information/3.mp4" download="MH370_Mystery.mp4" class="download-btn">Scarica Video</a>
+            </div>
         </div>
+
+        <!-- 4. Mariana Trench -->
+        <div class="card">
+            <h3>🌊 La Fossa delle Marianne</h3>
+            <p>La Fossa delle Marianne è il punto più profondo della crosta terrestre, raggiungendo gli 11.000 metri.</p>
+            <p><strong>Pressione Estrema:</strong> Qui la pressione è di circa 1.086 bar.</p>
+            <p><strong>Creature Aliene:</strong> In questo buio perenne vivono specie che sfidano la biologia.</p>
+            
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="information/4.mp4" type="video/mp4">
+                    Il tuo browser non supporta i video HTML5.
+                </video>
+            </div>
+
+            <div class="btn-container">
+                <button class="glow-btn">Deep Investigation</button>
+                <a href="information/4.mp4" download="Mariana_Trench_Mystery.mp4" class="download-btn">Scarica Video</a>
+            </div>
+        </div>
+
+        <!-- 5. Dyatlov Pass -->
+        <div class="card">
+            <h3>🏔 L'Incidente del Passo Djatlov</h3>
+            <p>Nel 1959, nove escursionisti morirono in circostanze che ancora oggi tolgono il sonno agli investigatori.</p>
+            <p><strong>Scena del Crimine:</strong> La loro tenda fu trovata squarciata dall'interno.</p>
+            <p><strong>Ferite Inspiegabili:</strong> Alcune vittime presentavano traumi interni pari a quelli di un incidente d'auto.</p>
+            
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="information/5.mp4" type="video/mp4">
+                    Il tuo browser non supporta i video HTML5.
+                </video>
+            </div>
+
+            <div class="btn-container">
+                <button class="glow-btn">Deep Investigation</button>
+                <a href="information/5.mp4" download="Dyatlov_Pass_Mystery.mp4" class="download-btn">Scarica Video</a>
+            </div>
+        </div>
+
+        <!-- 6. Tupac Shakur -->
+        <div class="card">
+            <h3>🔫 Tupac Shakur: La Leggenda Senza Giustizia</h3>
+            <p>Il 7 settembre 1996, il mondo del Rap perse la sua figura più iconica in una sparatoria a Las Vegas.</p>
+            <p><strong>L'Omertà:</strong> Nonostante la sparatoria, nessuno è stato condannato per decenni.</p>
+            <p><strong>Teorie del Complotto:</strong> La mancanza di un colpevole ha alimentato miti sulla sua sopravvivenza.</p>
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="information/6.mp4" type="video/mp4">
+                    Il tuo browser non supporta i video HTML5.
+                </video>
+            </div>
+
+            <div class="btn-container">
+                <button class="glow-btn">Deep Investigation</button>
+                <a href="information/6.mp4" download="Tupac_Shakur_Mystery.mp4" class="download-btn">Scarica Video</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+            
